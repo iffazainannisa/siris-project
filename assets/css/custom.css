@@ -1,0 +1,60 @@
+.kecil{
+	zoom:90%;
+}
+
+.bg-picture{
+	background-image: url('../img/background5.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.bg-pink{
+	background: #e20a16; 
+	/*red1*/
+}
+
+.bg-head{
+	background: #323030;
+	color: white;
+}
+
+.row .btn-zoom:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.bg-content{
+	background: #eb535c;
+	/*red2*/
+	color: white;
+}
+
+.bg-content2{
+	background: #fce6e8;
+	color: black;
+}
+
+.garis{
+  margin-top: 2%;
+  margin-bottom: 8%;
+  width: 50px;
+  height: 2px;
+  background: red;
+}
+
+.menu{
+	line-height: 2em;
+	text-decoration: none;
+	color: black;
+}
+
+.menu-active a{
+	text-decoration: none;
+	color: black;
+}
+
+/*.menu-active:hover{
+	background: #ff968c;
+	color: black;
+}*/
+

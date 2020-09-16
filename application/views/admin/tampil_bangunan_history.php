@@ -1,0 +1,128 @@
+    <!-- <?php //var_dump($pengurus);?> -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <div class="alert bg-content" role="alert">
+          <i class="fas fa-cogs"></i> Kelola Inventaris Bangunan
+        </div>
+        <?php echo $this->session->flashdata('pesan');?>
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card mb-4 py-3 border-left-danger">
+                <div class="card-body">
+                  <h4><i class="far fa-edit"></i> <b >Inventaris Bangunan</b></h4>
+                  <div class="garis" style="width: 100%; margin-bottom: 2%;"></div>
+                  <!-- <button type="button" class="btn btn-success">Print</button> -->
+                </div>
+                
+
+                <div class="row">
+                  <!-- Begin Page Content -->
+                  <div class="container-fluid">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                        <h4 class="m-0 font-weight-bold text-primary"></h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0.5">
+                            <thead>
+                              <tr style="font-size: 12px; text-align: center;">
+                                <th>No</th> 
+                                <th>Nomor Inventaris</th>
+                                <th>Nama Bangunan</th>
+                                <th>Luas Bangunan</th>
+                                <th>Jumlah Lantai</th>
+                                <th>Tanggal Update Terakhir</th>
+                                <th>Keterangan</th>
+                                <th>Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php 
+                                $no=1;
+                                foreach ($inventaris_bangunan_history as $inv) :
+                              ?> 
+                              <tr style="font-size: 12px; text-align:center;">
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $inv->no_inventaris; ?></td>
+                                <td><?php echo $inv->nama_bangunan; ?></td>
+                                <td><?php echo $inv->luas_bangunan; ?></td>
+                                 <td><?php echo $inv->jumlah_lantai; ?></td>
+                                <td><?php echo $inv->update_time; ?></td>                                  
+                                <td><?php echo $inv->keterangan; ?></td>
+                                
+                                <td class="center">
+                                   <?php echo anchor('admin/history/edit_history_bangunan/'.$inv->id_track, '<div class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></div>'); ?>
+                                </td>
+                              </tr> 
+                            <?php endforeach; ?>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Button trigger modal -->
+
+   </div>
+    <!-- End of Content Wrapper -->
+      
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="profilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="<?php echo base_url('assets/img/out.png')?>" width="40%">
+            <h3 class="modal-title" id="exampleModalLabel">Anda yakin ingin keluar?</h3>
+
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+            <a class="btn btn-primary" href="<?php echo base_url('auth/logout') ?>">Keluar</a>
+          </div>
+        </div>
+      </div>
+    </div>
